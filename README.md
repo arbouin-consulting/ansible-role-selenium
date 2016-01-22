@@ -1,7 +1,8 @@
 ansible-role-selenium
 =====================
 
-[![Build Status](https://travis-ci.org/lesmyrmidons/ansible-role-selenium.svg?branch=master)](https://travis-ci.org/lesmyrmidons/ansible-role-selenium)
+[![Build Status](https://travis-ci.org/arbouin-consulting/ansible-role-selenium.svg?branch=master)](https://travis-ci.org/arbouin-consulting/ansible-role-selenium)
+
 
 Ansible Role - Selenium on Debian.
 

@@ -1,0 +1,8 @@
+---
+
+selenium:
+  dir: /opt/selenium
+  dir_log: /var/logs/selenium
+  port: 4444
+  driver:
+    chrome_dir: /opt/chromedriver

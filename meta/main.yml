@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: lesmyrmidons
+  description: Selenium for Debian 64Bit.
+  company: ""
+  license: "license (Apache version 2)"
+  min_ansible_version: 1.9
+  platforms:
+  - name: EL
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - wheezy
+    - jessie
+  categories:
+    - functional test

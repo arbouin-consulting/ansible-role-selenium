@@ -16,14 +16,18 @@ For Debian :
 
 To change the list of packages to install:
 
-	docker_packages:
-	  - docker.io
+    selenium:
+      dir: /opt/selenium
+      dir_log: /var/logs/selenium
+      port: 4444
+      driver:
+        chrome_dir: /opt/chromedriver
 
 ## Example Playbook
 
-    - hosts: docker
+    - hosts: selenium
       roles:
-        - { role: lesmyrmidons.docker }
+        - { role: lesmyrmidons.selenium }
 
 ## License
 

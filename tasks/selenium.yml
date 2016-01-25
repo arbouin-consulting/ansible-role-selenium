@@ -3,9 +3,29 @@
 - name: Create folder log
   file: path={{ selenium.dir_log }} state=directory mode=0755
 
+- name: Create folder installer selenium
+  file: path={{ selenium.dir }} state=directory mode=0755
+
+- name: Stat selenium
+  stat: path={{ selenium.dir }}/selenium-server-standalone.jar
+  register: selenium_stat
+
 - name: Download selenium
-  get_url: url=http://goo.gl/rQhaxb dest={{ selenium.dir }}/selenium-server-standalone.jar
+  get_url: |
+    url='http://selenium-release.storage.googleapis.com/{{ selenium.version.split('.')[0] }}.{{ selenium.version.split('.')[1] }}/selenium-server-standalone-{{ selenium.version }}.jar'
+    dest={{ selenium.dir }}
+    timeout=30
+  when: selenium_stat.stat.exists == false
+
+- name: Rename file
+  command: mv {{ selenium.dir }}/selenium-server-standalone-{{ selenium.version }}.jar {{ selenium.dir }}/selenium-server-standalone.jar
+  when: selenium_stat.stat.exists == false
 
 - name: Add file for create a service
   template: src=selenium.j2 dest=/etc/init.d/selenium owner=root group=root mode=0755
-  notify: restart apache
+  when: selenium_stat.stat.exists == false
+
+- name: Run
+  service: name=selenium state=started enabled=yes
+  when: selenium_stat.stat.exists == false
+  notify: restart selenium

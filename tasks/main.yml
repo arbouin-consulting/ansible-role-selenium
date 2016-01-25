@@ -1,8 +1,10 @@
 ---
 
-# Include variables and define needed variables.
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+- name: Install required
+  apt: pkg={{ item }} state=present
+  with_items:
+    - unzip
+    - tar
 
 - include: chrome-debian.yml
   when: ansible_os_family == 'Debian'

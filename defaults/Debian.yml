@@ -1,8 +1,10 @@
 ---
 
 selenium:
+  version: 2.49.1
   dir: /opt/selenium
   dir_log: /var/logs/selenium
   port: 4444
   driver:
+    url_repository: http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
     chrome_dir: /opt/chromedriver

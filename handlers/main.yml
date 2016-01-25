@@ -1,0 +1,6 @@
+---
+
+- name: restart selenium
+  service: |
+    name=selenium
+    state=restarted

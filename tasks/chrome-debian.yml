@@ -1,13 +1,16 @@
 ---
 
-- name: Download chrome driver
-  get_url: url=http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip dest=/opt/chromedriver_linux64.zip
+- name: Create folder
+  file: path={{ selenium.driver.chrome_dir }} state=directory mode=0755
 
 - name: Unzip chrome driver
-  unarchive: src=/opt/chromedriver_linux64.zip dest={{ selenium.driver.chrome_dir }}/chromedriver
+  unarchive: src={{ selenium.driver.url_repository }} dest={{ selenium.driver.chrome_dir }} copy=no mode=0755
+
+- name: Add key repository
+  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
 
 - name: Add repository for browser Chrome
-  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present filename='google-chrome'
+  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present
 
 - name: Install the browser
-  apt: name=google-chrome-stable state=present
+  apt: pkg=google-chrome-stable state=present

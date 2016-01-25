@@ -4,8 +4,8 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
-- include: debian.yml
+- include: chrome-debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Download chrome driver
-  get_url: 
+- include: selenium.yml
+  when: ansible_os_family == 'Debian'

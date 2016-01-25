@@ -1,0 +1,11 @@
+---
+
+- name: Create folder log
+  file: path={{ selenium.dir_log }} state=directory mode=0755
+
+- name: Download selenium
+  get_url: url=http://goo.gl/rQhaxb dest={{ selenium.dir }}/selenium-server-standalone.jar
+
+- name: Add file for create a service
+  template: src=selenium.j2 dest=/etc/init.d/selenium owner=root group=root mode=0755
+  notify: restart apache

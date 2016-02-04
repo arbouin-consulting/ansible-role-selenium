@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  author: lesmyrmidons
+  author: Kevin Arbouin
   description: Selenium for Debian 64Bit.
-  company: ""
+  company: "ARBOUIN Consulting"
   license: "license (Apache version 2)"
   min_ansible_version: 1.9
   platforms:
@@ -13,6 +13,7 @@ galaxy_info:
     versions:
     - wheezy
     - jessie
-  galaxy_tags: ["functional test"]
+  galaxy_tags:
+    - functionaltest
 
 dependencies: []

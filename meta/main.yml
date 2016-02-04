@@ -13,7 +13,6 @@ galaxy_info:
     versions:
     - wheezy
     - jessie
-  galaxy_tags:
-  - functional test
+  galaxy_tags: ["functional test"]
 
 dependencies: []

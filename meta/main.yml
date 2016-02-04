@@ -13,9 +13,7 @@ galaxy_info:
     versions:
     - wheezy
     - jessie
-  categories:
-    - functional test
-
-  galaxy_tags: [0.1, 0.2]
+  galaxy_tags:
+   - functional test
 
 dependencies: []

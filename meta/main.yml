@@ -1,6 +1,4 @@
 ---
-dependencies: []
-
 galaxy_info:
   author: lesmyrmidons
   description: Selenium for Debian 64Bit.
@@ -17,3 +15,6 @@ galaxy_info:
     - jessie
   categories:
     - functional test
+
+  galaxy_tags: []
+  dependencies: []

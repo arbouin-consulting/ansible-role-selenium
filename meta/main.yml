@@ -14,6 +14,6 @@ galaxy_info:
     - wheezy
     - jessie
   galaxy_tags:
-   - functional test
+  - functional test
 
 dependencies: []
